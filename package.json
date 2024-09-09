@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -14,9 +15,22 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Vatsal Mangukiya",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^32.0.2"
+    "electron": "^32.0.2",
+    "electron-builder": "^25.0.5"
+  },
+  "build": {
+    "appId": "com.example.electron-quick-start",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
+    },
+    "forceCodeSigning":true
   }
 }
